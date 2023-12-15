@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <title>我的 Flask 應用</title>
+        <!-- 先引入 Tailwind CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <!-- 然後引入自定義 CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+    </head>
+    <body>
+        <h1>歡迎來到我的 Flask 應用！</h1>
+        <p class="bg-blue-500">{{ message }} {{ pp }}</p>
+        <button
+            class="bg-red-500"
+            style="width: 25%"
+            onclick="popupAlert()"
+        >
+            This is button
+        </button>
+
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
