@@ -1,0 +1,4 @@
+{
+    "cSpell.words": ["dotenv", "jsonify", "pymongo"],
+    "python.analysis.extraPaths": ["./src/routes", "./src/configs"]
+}
