@@ -15,10 +15,12 @@ def create_article():
         missing_or_empty_fields = [field for field in required_fields if not article_data.get(field)]
 
         if missing_or_empty_fields:
-            return jsonify({'error': 'Missing or empty fields, pls check ["title", "eng_title", "article_tag", "statue", "cover_url", "summary", "content"]', 'details': missing_or_empty_fields}), 400
+            return jsonify({'error': 'Missing or empty fields, pls check ["title", "eng_title", "article_tag", "statue", "cover_url", "summary", "content"]', 'missing field': missing_or_empty_fields}), 400
         else:
             result = article_model.create_article(article_data)
-            return jsonify({'_id': str(result.inserted_id)}), 201
+            return jsonify(
+                {'_id': str(result.inserted_id)}
+                ), 201
 
 def get_article_list():
     article_id = request.args.get('article_id')
